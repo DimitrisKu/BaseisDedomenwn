@@ -12,6 +12,7 @@ USE dbms24;
 CREATE TABLE recipes (
   recipe_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   recipe_name VARCHAR(45) NOT NULL,
+  recipe_type ENUM(cooking, baking) NOT NULL,
   ethnic_cuisine_id INT UNSIGNED,
   `description` text NOT NULL,
   `level` TINYINT UNSIGNED NOT NULL CHECK (level BETWEEN 1 AND 5),
@@ -109,4 +110,6 @@ CREATE TABLE food_group (
     description TEXT,
     PRIMARY KEY (group_id) 
 );
+
+
 
